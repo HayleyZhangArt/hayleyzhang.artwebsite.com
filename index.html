@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Still Water</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Georgia", serif;
+            color: #2c2c2c;
+            background: #f7f5f2;
+            scroll-behavior: smooth;
+        }
+
+        /* NAV */
+        .nav {
+            position: fixed;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 60px;
+            box-sizing: border-box;
+            background: rgba(255,255,255,0.6);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #333;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        /* HERO */
+        .hero {
+            display: flex;
+            height: 100vh;
+        }
+
+        .hero-text {
+            width: 50%;
+            padding: 140px 100px;
+        }
+
+        .hero-text h1 {
+            font-size: 2.8rem;
+            font-weight: normal;
+            line-height: 1.4;
+        }
+
+        .hero-text p {
+            margin-top: 25px;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .hero-image {
+            width: 50%;
+            background: url('Still Water.jpg') center/cover no-repeat;
+            position: relative;
+            animation: slowZoom 20s infinite alternate;
+        }
+
+        .hero-image::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to left, rgba(255,255,255,0), #f7f5f2);
+        }
+
+        @keyframes slowZoom {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+
+        /* SECTION */
+        .section {
+            padding: 100px;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s;
+        }
+
+        .section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .grid {
+            display: flex;
+            gap: 40px;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 12px;
+            transition: transform 0.5s;
+        }
+
+        .card img:hover {
+            transform: scale(1.03);
+        }
+
+        .title {
+            margin-top: 15px;
+            font-style: italic;
+            font-weight: normal;
+        }
+
+        .card p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* SOUND */
+        .sound-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .sound-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .sound-text {
+            max-width: 500px;
+        }
+
+        .sound-text p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        audio {
+            width: 220px;
+            margin-top: 10px;
+        }
+
+        /* ABOUT */
+        .about {
+            padding: 100px;
+            line-height: 1.8;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <div class="nav">
+        <div>Hayley Zhang</div>
+        <div>
+            <a href="#home">HOME</a>
+            <a href="#art">ARTWORK</a>
+            <a href="#sound">SOUND</a>
+            <a href="#about">ABOUT</a>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <div class="hero" id="home">
+        <div class="hero-text">
+            <h1>A space for stillness, nature, and inner awareness</h1>
+            <p>
+                Through art and sound, this practice explores the beauty of nature 
+                and the connection between environment, perception, and well-being.
+            </p>
+        </div>
+        <div class="hero-image"></div>
+    </div>
+
+    <!-- ART -->
+    <div class="section" id="art">
+        <h2>ARTWORK</h2>
+
+        <div class="grid">
+            <div class="card">
+                <img src="Still Water.jpg">
+                <div class="title">Water (2025)</div>
+                <p>sounds of water in nature and everyday life</p>
+            </div>
+
+            <div class="card">
+                <img src="Breathing Field.jpg">
+                <div class="title">Listen and Breath (2026)</div>
+                <p>a place for you to rest</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SOUND -->
+    <div class="section" id="sound">
+        <h2>SOUND</h2>
+
+        <div class="sound-item">
+            <img src="Still Water.jpg">
+            <div class="sound-text">
+                <div class="title">Water (2025)</div>
+                <p>
+                    Water explores the relationship between natural and human experiences of water. 
+                    The work captures the subtle sound of rivers and waterfalls, reflecting the quiet presence of nature.
+                    <br><br>
+                    In contrast, it introduces the sounds of water shaped by everyday human activity, separated into the left channel 
+                    (natural water) and the right channel (human use), creating a dialogue between the organic and the constructed.
+                    <br><br>
+                    Through this contrast, Hayley Zhang presents an exploration of how water exists both as a vital resource 
+                    and as a source of calm and reflection.
+                </p>
+                <audio controls>
+                    <source src="Still Water.mp3">
+                </audio>
+            </div>
+        </div>
+
+        <div class="sound-item">
+            <img src="Breathing Field.jpg">
+            <div class="sound-text">
+                <div class="title">Listen and Breath (2026)</div>
+                <p>
+                    Listen and Breath is a meditative sound composition by Hayley Zhang, developed as part of her meditation workshop 
+                    and collective sessions presented in her Fine Art BA First Year Show.
+                    <br><br>
+                    As a continuation of Water, the work extends her exploration of sound, awareness, and inner experience.
+                    <br><br>
+                    Through gentle, sustained tones, it invites audiences into a shared moment of stillness and reflection.
+                </p>
+                <audio controls>
+                    <source src="Breathing Field.mp3">
+                </audio>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="about section" id="about">
+        <h2>ABOUT</h2>
+        <p>
+            Hayley Zhang is a meditation music creator and artist focused on sound-based relaxation and inner awareness. 
+            Her work combines ambient soundscapes, subtle frequencies, and minimalist compositions designed to support 
+            deep rest, emotional balance, and mindful presence.
+            <br><br>
+            With a sensitivity to sound and atmosphere, she creates immersive listening experiences that help individuals 
+            slow down, release tension, and reconnect with their inner state.
+            <br><br>
+            Through carefully composed audio, Hayley Zhang invites listeners into a calm and supportive space for reflection 
+            and everyday stillness.
+        </p>
+    </div>
+
+    <!-- SCROLL ANIMATION -->
+    <script>
+        const sections = document.querySelectorAll('.section');
+
+        window.addEventListener('scroll', () => {
+            sections.forEach(section => {
+                const top = section.getBoundingClientRect().top;
+                if (top < window.innerHeight - 100) {
+                    section.classList.add('show');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
